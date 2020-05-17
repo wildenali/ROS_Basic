@@ -9,9 +9,17 @@ rate = rospy.Rate(1)
 
 age = Age()
 age.years = 6
-age.month = 12
+age.months = 12
 age.days = 23
 
 while not rospy.is_shutdown():
     pub.publish(age)
     rate.sleep()
+
+'''
+disini kalau si exercise_33.msg tidak terdeteksi
+coba remove folder build, terus catkin_make lagi
+
+user:~/catkin_ws$ rm -rf build
+user:~/catkin_ws$ catkin_make
+'''
