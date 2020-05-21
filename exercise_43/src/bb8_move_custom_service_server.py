@@ -38,9 +38,10 @@ Tahap PERTAMA (membuat service server)
 2. Setting configuration di CMakeList.txt
 3. Setting configuration di package.xml
 4. Terminal #1
-    a. cd catkin
+    a. roscd; cd .. [ENTER]
     b. catkin_make
     c. source devel/setup.bash
+    d. rossrv list | grep exercise_43_ServiceMessage
         exercise_43/exercise_43_ServiceMessage  # kalau muncul ini berarti file srv nya udah jadi
 
 Tahap KEDUA versi 1 (rosrun)
