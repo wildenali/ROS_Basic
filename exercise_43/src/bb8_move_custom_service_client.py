@@ -9,14 +9,6 @@ rospy.wait_for_service('/move_bb8_in_circle_custom')            # Wait for the s
 move_bb8_circle_service_client = rospy.ServiceProxy('/move_bb8_in_circle_custom', exercise_43_ServiceMessage)   # Create the connection to service
 move_bb8_circle_request_object = exercise_43_ServiceMessageRequest()    # Create an object of type EmptyRequest
 
-"""
-# BB8CustomServiceMessage
-float64 side       # The distance of each side of the circle
-int32 repetitions    # The number of times BB-8 has to execute the circle movement when the service is called
----
-bool success         # Did it achieve it?
-"""
-
 move_bb8_circle_request_object.duration = 20
 
 rospy.loginfo("Doing Service Call...")
