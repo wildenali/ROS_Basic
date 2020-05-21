@@ -33,8 +33,8 @@ rospy.spin()    # mainain the service open
 
 
 '''
-Tahap PERTAMA
-1. Membuat file .srv di folder srv
+Tahap PERTAMA (membuat service server)
+1. Buat file .srv di folder srv
 2. Setting configuration di CMakeList.txt
 3. Setting configuration di package.xml
 4. Terminal #1
@@ -43,15 +43,40 @@ Tahap PERTAMA
     c. source devel/setup.bash
         exercise_43/exercise_43_ServiceMessage  # kalau muncul ini berarti file srv nya udah jadi
 
-Tahap KEDUA
-1. Membuat file bb8_move_custom_service_server.py
+Tahap KEDUA versi 1 (rosrun)
+1. Buat file bb8_move_custom_service_server.py
 2. Terminal #1
     a. Eksekusi perintah chmod +x bb8_move_custom_service_server.py di folder exercise_43/src
     b. roscd; cd .. [ENTER]
     c. rosrun exercise_43 bb8_move_custom_service_server.py
-
 3. Terminal #2
     a. rosservice call /move_bb8_in_circle_custom [TAB]+[TAB]
     b. kemudian ganti durationnya, silahkan masukan angka sesukanya
     c. and the the BB8 robot berputaaaar, excelent
+
+Tahap KEDUA versi 1 (roslaunch)
+1. Buat file bb8_move_custom_service_server.py
+2. Buat folder launch di dalam project exercise_43
+3. Buat file .launch dengan nama start_bb8_move_custom_service_server.launch
+4. Terminal #1
+    a. Eksekusi perintah chmod +x bb8_move_custom_service_server.py di folder exercise_43/src
+    b. roscd; cd .. [ENTER]
+    c. roslaunch exercise_43 start_bb8_move_custom_service_server.launch
+5. Terminal #2
+    a. rosservice call /move_bb8_in_circle_custom [TAB]+[TAB]
+    b. kemudian ganti durationnya, silahkan masukan angka sesukanya
+    c. and the the BB8 robot berputaaaar, excelent
+
+Tahap KETIGA (membuat service client)
+1. Buat file bb8_move_custom_service_client.py di folder exercise_43/src
+2. Terminal #1  -> Eksekusi perintah chmod +x bb8_move_custom_service_client.py di folder exercise_43/src
+3. Buat file call_bb8_move_custom_service_server.launch di folder exercise_43/launch
+4. Terminal #1
+    a. roscd; cd .. [ENTER]     # opsional mau di directory mana aja bisa
+    b. catkin_make
+    c. roslaunch exercise_43 start_bb8_move_custom_service_server.launch
+5. Terminal #2
+    a. roscd; cd .. [ENTER]     # opsional mau di directory mana aja bisa
+    b. roslaunch exercise_43 call_bb8_move_in_circle_service_server.launch
+6. DONE, yout bb8 moved circle
 '''
