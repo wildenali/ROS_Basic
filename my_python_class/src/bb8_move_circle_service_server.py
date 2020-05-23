@@ -26,6 +26,6 @@ Tahap PERTAMA (roslaunch)
     b. roscd; cd .. [ENTER]
     c. roslaunch my_python_class bb8_move_circle_service_server.launch
 5. Terminal #2
-    a. rosservice call /bb8_move_circle_service_server [TAB]+[TAB]
+    a. rosservice call /move_bb8_in_circle [TAB]+[TAB]
     b. ENTER and the the BB8 robot berputaaaar, excelent
 '''
